@@ -27,6 +27,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/workflows-service/tsconfig.app.json"
       }
+    },
+    "workflows": {
+      "type": "library",
+      "root": "libs/workflows",
+      "entryFile": "index",
+      "sourceRoot": "libs/workflows/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/workflows/tsconfig.lib.json"
+      }
     }
   }
 }
