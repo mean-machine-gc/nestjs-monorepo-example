@@ -23,4 +23,12 @@ export class BuildingsService {
   remove(id: number) {
     return `This action removes a #${id} building`;
   }
+
+  async createWorkflow(buildingId: number) {
+    return fetch('http://localhost:3001/workflows', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: 'My Workflow', buildingId }),
+    }).then((res) => res.text());
+  }
 }
