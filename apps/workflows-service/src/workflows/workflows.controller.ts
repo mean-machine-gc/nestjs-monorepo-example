@@ -1,12 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Get, Body, Patch, Param, Delete } from '@nestjs/common';
 import { WorkflowsService } from './workflows.service';
 import { CreateWorkflowDto, UpdateWorkflowDto } from '@app/workflows';
 import { MessagePattern, Payload } from '@nestjs/microservices';
@@ -31,7 +23,10 @@ export class WorkflowsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateWorkflowDto: UpdateWorkflowDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateWorkflowDto: UpdateWorkflowDto,
+  ) {
     return this.workflowsService.update(+id, updateWorkflowDto);
   }
 
