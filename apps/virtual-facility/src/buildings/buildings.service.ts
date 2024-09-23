@@ -4,7 +4,8 @@ import { UpdateBuildingDto } from './dto/update-building.dto';
 
 @Injectable()
 export class BuildingsService {
-  create(createBuildingDto: CreateBuildingDto) {
+  async create(createBuildingDto: CreateBuildingDto) {
+    await this.createWorkflow(1);
     return 'This action adds a new building';
   }
 
